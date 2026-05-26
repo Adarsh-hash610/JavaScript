@@ -12,4 +12,39 @@ console.log("Outer: ",a);
 console.log(c);
 
 
+function one() {
+    const userName = "Adarsh"
+    function two() {
+        const website = "cricbuzz.com";
+        console.log(userName);
+    }
+    // console.log(website);
+    two()    
+}
+one()
+
+if(true){
+    const userName = "Adarsh";
+    if(userName === "Adarsh")
+    {
+        const website = " Github";
+        console.log(userName + website);
+        
+    }
+    // console.log(website);
+    
+}
+// console.log(userName);
+
+
+console.log(addOne(5))
+function addOne(num)
+{
+    return num + 1;
+}
+
+const addTwo = function addTwo(num){
+    return num + 2;
+}
+console.log(addTwo(6))
 
