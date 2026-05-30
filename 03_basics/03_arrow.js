@@ -29,9 +29,15 @@ const one = () => {
 //one()
 
 // const addTwo = (num1, num2) => {
-//     return num1 + num2
+//     return num1 + num2                           //Explicit return
 // }
-const addTwo = (num1, num2) => num1 + num2
+
+
+// const addTwo = (num1, num2) => (num1 + num2)        //Implicit return
+// console.log(addTwo(3,4));
+
+const addTwo = (num1 , num2) => ({username : "Adarsh"})     //implicit return
 console.log(addTwo(3,4));
+
 
 
