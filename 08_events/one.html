@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h2, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141; color:aliceblue">
+    <h2>Amazing images</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/37363292/pexels-photo-37363292.jpeg" 
+                alt="photoshop" id="photoshop" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/19820500/pexels-photo-19820500.jpeg" 
+                alt="oldMan" id="oldMan" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/35719472/pexels-photo-35719472.jpeg" 
+                alt="Austria" id="Austria" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/37434167/pexels-photo-37434167.jpeg"
+                alt="japan" id="japan" width="200px"></li>
+            <li><a style="color: aliceblue;" href="https://www.google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // document.getElementById('oldMan').onclick = function(){
+    //     alert('oldMan clicked');
+    // }
+
+    document.getElementById('oldMan').addEventListener('click',(e)=>{
+        // alert('OldMan is from India!!!')
+        console.log(e);
+        
+    },false);
+
+    document.getElementById('images').addEventListener('click',(e)=>{
+        console.log('clicked inside the ul');
+        
+    },false);               // concept of bubbling and capturing
+
+    document.getElementById('oldMan').addEventListener('click',(e)=>{
+        console.log('owl clicked');
+        e.stopPropagation();
+        e.preventDefault();
+    },false);
+
+    document.getElementById('google').addEventListener('click', (e)=>{
+        e.preventDefault();
+        e.stopPropagation();        // use to stop the bubbling...
+        console.log("Google clicked");
+        
+    },false);
+
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        // console.log(e.target.parentNode);
+        // let removeIt = e.target.parentNode;
+        // removeIt.remove();
+
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);            
+            let removeIt = e.target.parentNode;
+            removeIt.remove();
+        }
+        
+    },false)
+
+
+    // below things need to be studied in events:-
+    // types, timestamp, defaultPrevented, target, toElement, sourceElement, currentTarget
+    // client Positions:- clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+</script>
+</html>
