@@ -13,7 +13,7 @@ const startChangingColour = function(){
     if (!intervalId) {
         intervalId = setInterval(function(){
             document.body.style.backgroundColor = randomColour();
-        }, 1000);
+        }, 100);
     }
 };
 
